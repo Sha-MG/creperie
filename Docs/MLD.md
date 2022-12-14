@@ -1,0 +1,5 @@
+plats(**id**, nom, recette, prix, type)  
+vignettes(**id**, nom, icone)  
+accompagnements(**id**, nom, couleur)  
+plats_has_vignettes(**id**, #plats(id), #vignettes(id) )  
+plats_has_accompagnements(**id**, #plats(id), #accompagnements(id))  
