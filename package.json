@@ -6,5 +6,10 @@
     "node": "^19.2.0",
     "pg": "^8.8.0",
     "sequelize": "^6.27.0"
+  },
+  "scripts": {
+    "db:create": "psql -U ocrepes -d ocrepes -f data/create_db.sql",
+    "db:populate": "psql -U ocrepes -d ocrepes -f data/populate_db.sql",
+    "db:reset": "npm run db:create && npm run db:populate"
   }
 }

@@ -25,4 +25,6 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 - Profil admin
 - CRUD des plats
 - Vue sur les commandes
-  
+
+----
+- Commentaires clients/Avis

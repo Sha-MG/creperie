@@ -1,0 +1,111 @@
+:root {
+    --color1 : #cda364;
+    --color2 : #c45b0c;
+    --color3 : #f7e8b4;
+    --color4 : #efc34f;
+    --color5 : #8baec4;
+    --color6 : #053d57;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,100&display=swap');
+
+  /* NavBar */
+
+  nav {
+	margin: auto;
+	position: relative;
+	width: 100vw;
+    min-width: 700px;
+	height: 50px;
+	background-color: var(--color6);
+	font-size: 0;
+}
+
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 1rem;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+
+#navDroite{
+    float: right;
+}
+
+a:nth-child(1) {
+	width: 5vw;
+}
+a:nth-child(2) {
+	width: 6vw;
+}
+a:nth-child(3) {
+	width: 7vw;
+}
+a:nth-child(4) {
+	width: 8vw;
+}
+a:nth-child(5) {
+	width: 6vw;
+}
+a:nth-child(6) {
+	width: 7vw;
+}
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 5vw;
+	left: 0;
+	background-color: #ffe134;
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 6vw;
+	left: 5vw;
+	background-color: #ffbf2e;
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 7vw;
+	left: 11vw;
+	background-color: #ff9e28;
+}
+nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 8vw;
+	left: 18vw;
+	background-color: #fe7c22;
+}
+nav .start-contact, a:nth-child(5):hover~.animation {
+	width: 6vw;
+	left: 26vw;
+	background-color: #fe5a1c;
+}
+nav .start-contact, a:nth-child(6):hover~.animation {
+	width: 7vw;
+	left: 93vw;
+	background-color: #ff2306;
+}
+
+nav a {
+    transition: color 0.4s ease-in;
+}
+nav a:hover {
+    color: var(--color6);
+}
+
+/* Body */
+
+body {
+    font-family: 'Raleway', sans-serif;
+}

@@ -25,3 +25,22 @@
    - #plats(id)
    - #accompagnements(id)
 
+- Commandes
+   - #Profil(id)
+   - Prix
+   - Statut
+   - CreatedAt
+   - UpdatedAt
+  
+
+- Commandes_has_plats 
+   - commandes_id
+   - plats_id
+  
+
+- Profils
+  - Nom
+  - Prénom
+  - Adresse
+  - Points de fidélité
+  - Rôle

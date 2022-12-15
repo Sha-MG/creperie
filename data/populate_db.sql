@@ -61,5 +61,23 @@ VALUES  (1, 1),
         (5, 1)
         ;
 
+INSERT INTO "profils" ("nom", "prenom", "adresse", "points", "role", "mail", "password")
+VALUES  ('Michel', 'Bidule', '01 rue de la joie 74000 Paris', 0, 'customer', 'michel@gmail.com', 'michel'),
+        ('Admin', 'Admin', '34 rue du bonheur 35000 Rennes', 10, 'admin', 'admin@gmail.com', 'admin')
+        ;
+
+INSERT INTO "commandes" ("profils_id", "prix", "statut", "created_at", "updated_at")
+VALUES  (1, 48, 'Terminé', '2021-01-19 03:14:07', '2021-01-19 04:10:01' ),
+        (1, 32, 'En cours', '2022-04-14 11:45:34', null)
+        ;
+
+INSERT INTO "commandes_has_plats" ("commandes_id", "plats_id")
+VALUES  (1, 1 ),
+        (1, 2),
+        (1, 4),
+        (2, 3),
+        (2, 2),
+        (2, 1)
+        ;
 
 COMMIT ;
