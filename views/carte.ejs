@@ -1,12 +1,78 @@
 <%- include('partials/header') %>
 
-    <p>Coucou</p>
-    <% for(plat of platsList){ %>
+<section id="carteContainerGlobal">
+    <article id="carteContainerEntree" >
+        <h2>Les Entrées</h2>
+        <div class="carteContainerList">
+            <% for(entrée of entreeList){ %>
+                <article class="carteContainer_platContainer">
+                    <div class="carteContainer_topPart">
+                        <h3 class="carteContainer_nom"><%= entrée.nom %></h3>
+                        <p class="carteContainer_prix"><%= entrée.prix %></p>
+                    </div>
+                    <p class="carteContainer_recette"><%= entrée.recette %> </p>
+                    <div class="carteContainer_divIcones">
+                        <div>
+                            <% for(allergene of entrée.vignettes){ %>
+                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone"></i>
+                            <%}%>
+                        </div>
+                    </div>
+                </article>
+            <%}%>
+        </div>
+    </article>
+    <article id="carteContainerPlat" >
+        <h2>Les Plats</h2>
+        <div class="carteContainerList" >
+            <% for(plat of platsList){ %>
+                <article class="carteContainer_platContainer">
+                    <div class="carteContainer_topPart">
+                        <h3 class="carteContainer_nom"><%= plat.nom %></h3>
+                        <p class="carteContainer_prix"><%= plat.prix %></p>
+                    </div>
+                    <p class="carteContainer_recette"><%= plat.recette %> </p>
+                    <div class="carteContainer_divIcones">
+                        <div>
+                            <% for(allergene of plat.vignettes){ %>
+                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone"></i>
+                            <%}%>
+                        </div>
+                        <div class="carteContainer_tag">
+                            <% for(accompagnement of plat.accompagnements){ %>
+                                <span class="accompagnement tag_<%= accompagnement.couleur %>"> <%= accompagnement.nom %> </span>
+                            <%}%>
+                        </div>
+                    </div>
+                </article>
+            <%}%>
+        </div>
+    </article>
+    <article id="carteContainerDessert" class="carteContainerList">
+        <h2>Les Desserts</h2>
+        <div class="carteContainerList" >
+            <% for(dessert of dessertList){ %>
+                <article class="carteContainer_platContainer">
+                    <div class="carteContainer_topPart">
+                        <h3 class="carteContainer_nom"><%= dessert.nom %></h3>
+                        <p class="carteContainer_prix"><%= dessert.prix %></p>
+                    </div>
+                    <p class="carteContainer_recette"><%= dessert.recette %> </p>
+                    <div class="carteContainer_divIcones">
+                        <div>
+                            <% for(allergene of dessert.vignettes){ %>
+                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone"></i>
+                            <%}%>
+                        </div>
+                    </div>
+                </article>
+            <%}%>
+        </div>
+    </article>
 
-        <p><%- plat.nom %></p>
 
+</section>
 
-    <%}%>
 
 
 

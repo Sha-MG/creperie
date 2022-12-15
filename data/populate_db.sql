@@ -10,20 +10,20 @@ VALUES  ('Galette pouet pouet', 'Pleins de bonnes choses', 'Plat', 10.50),
         ;
 
 INSERT INTO "vignettes" ("nom", "icone")
-VALUES  ('Poisson', 'poisson.png'),
-        ('Viande', 'viande.png'),
-        ('Végétarien', 'vege.png'),
-        ('Arachide', 'arachide.png'),
-        ('Gluten', 'gluten.png'),
-        ('Lait', 'lait.png')
+VALUES  ('Poisson', 'fa-fish'),
+        ('Viande', 'fa-drumstick-bite'),
+        ('Végétarien', 'fa-leaf'),
+        ('Arachide', 'fa-cubes-stacked'),
+        ('Gluten', 'fa-wheat-awn'),
+        ('Lait', 'fa-bottle-water')
         ;
 
 
 INSERT INTO "accompagnements" ("nom", "couleur")
-VALUES  ('Frites', 'yellow'),
-        ('Salade', 'green'),
-        ('Pâtes', 'brightyellow'),
-        ('Ratatouille', 'red')
+VALUES  ('Frites', 'frites'),
+        ('Salade', 'salade'),
+        ('Pâtes', 'pates'),
+        ('Ratatouille', 'ratatouille')
         ;
 
 INSERT INTO "plats_has_vignettes" ("plats_id", "vignettes_id")
@@ -58,7 +58,8 @@ VALUES  (1, 1),
         (4, 1),
         (4, 2),
         (4, 4),
-        (5, 1)
+        (5, 1),
+        (6, 4)
         ;
 
 INSERT INTO "profils" ("nom", "prenom", "adresse", "points", "role", "mail", "password")

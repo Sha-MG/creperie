@@ -27,4 +27,8 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 - Vue sur les commandes
 
 ----
+
+#### Idées si y a le temps :
+
 - Commentaires clients/Avis
+- Couleurs des horaires qui changent en fonction de l'heure actuelle 

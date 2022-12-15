@@ -1,13 +1,12 @@
 :root {
     --color1 : #cda364;
     --color2 : #c45b0c;
-    --color3 : #f7e8b4;
+    --color3 : #fcf9ec;
     --color4 : #efc34f;
     --color5 : #8baec4;
     --color6 : #053d57;
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,100&display=swap');
 
   /* NavBar */
 
@@ -16,13 +15,13 @@
 	position: relative;
 	width: 100vw;
     min-width: 700px;
-	height: 50px;
+	height: 80px;
 	background-color: var(--color6);
 	font-size: 0;
 }
 
 nav a {
-	line-height: 50px;
+	line-height: 80px;
 	height: 100%;
 	font-size: 1rem;
 	display: inline-block;
@@ -33,6 +32,7 @@ nav a {
 	text-align: center;
 	color: white;
 	cursor: pointer;
+	justify-content: center;
 }
 
 nav .animation {
@@ -49,51 +49,51 @@ nav .animation {
 }
 
 a:nth-child(1) {
-	width: 5vw;
+	width: 90px;
 }
 a:nth-child(2) {
-	width: 6vw;
+	width: 100px;
 }
 a:nth-child(3) {
-	width: 7vw;
+	width: 140px;
 }
 a:nth-child(4) {
-	width: 8vw;
+	width: 160px;
 }
 a:nth-child(5) {
-	width: 6vw;
+	width: 110px;
 }
 a:nth-child(6) {
-	width: 7vw;
+	width: 140px;
 }
 nav .start-home, a:nth-child(1):hover~.animation {
-	width: 5vw;
+	width: 90px;
 	left: 0;
 	background-color: #ffe134;
 }
 nav .start-about, a:nth-child(2):hover~.animation {
-	width: 6vw;
-	left: 5vw;
+	width: 100px;
+	left: 90px;
 	background-color: #ffbf2e;
 }
 nav .start-blog, a:nth-child(3):hover~.animation {
-	width: 7vw;
-	left: 11vw;
+	width: 140px;
+	left: 190px;
 	background-color: #ff9e28;
 }
 nav .start-portefolio, a:nth-child(4):hover~.animation {
-	width: 8vw;
-	left: 18vw;
+	width: 160px;
+	left: 330px;
 	background-color: #fe7c22;
 }
 nav .start-contact, a:nth-child(5):hover~.animation {
-	width: 6vw;
-	left: 26vw;
+	width: 120px;
+	left: 490px;
 	background-color: #fe5a1c;
 }
 nav .start-contact, a:nth-child(6):hover~.animation {
-	width: 7vw;
-	left: 93vw;
+	width: 140px;
+	left: calc(100vw - 140px) ;
 	background-color: #ff2306;
 }
 
@@ -108,4 +108,50 @@ nav a:hover {
 
 body {
     font-family: 'Raleway', sans-serif;
+	background-color: var(--color3);
+	overflow-x: hidden;
 }
+
+/* Footer */
+
+footer{
+	margin-top: 10vh;
+	color: white;
+	padding: 30px 0;
+	background-color: var(--color6);
+	width: 100vw;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+#footer_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 30px;
+}
+
+#footer-gauche{
+	padding-right: 40px;
+	border-right: 3px solid var(--color4);
+}
+
+footer a {
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.3s ease-in;
+}
+
+footer a:hover {
+	color: var(--color4);
+}
+
+#copyright{
+	margin-top: 30px;
+}
+
+#contact{
+	font-weight: 700;
+}
+

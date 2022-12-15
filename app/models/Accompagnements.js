@@ -13,7 +13,7 @@ Accompagnement.init({
         allowNull: false },
 }, {
     sequelize,
-    tableName: "plats"
+    tableName: "accompagnements"
 });
 
 module.exports = Accompagnement;

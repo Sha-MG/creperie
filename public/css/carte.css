@@ -1,0 +1,135 @@
+:root {
+    --color1 : #cda364;
+    --color2 : #c45b0c;
+    --color3 : #fcf9ec;
+    --color4 : #efc34f;
+    --color5 : #8baec4;
+    --color6 : #053d57;
+  }
+  /* Carte entière || Elements globaux */
+
+#carteContainerGlobal{
+    width: 70vw;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 40px;
+    background-color: white;
+}
+
+.carteContainer_topPart{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.carteContainer_nom{
+    font-size: 1.3rem;
+
+}
+.carteContainer_nom, .carteContainer_prix{
+    margin: 0;
+}
+.carteContainerList{
+    width: 70vw;
+    margin-bottom: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vh;
+}
+
+.carteContainer_icone{
+    margin-right: 10px;
+}
+.carteContainer_recette{
+    padding-top: 1vh;
+    margin-bottom: 1vh;
+}
+.carteContainer_divIcones{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+h2{
+    margin-bottom: 5vh;
+    border-radius: 5px;
+    padding: 1vh;
+}
+
+.carteContainer_platContainer{
+    margin-bottom: 3vh;
+    width:30vw;
+}
+
+/* Tags couleurs */
+.accompagnement{
+
+    border-radius: 20px ;
+    padding: 5px;
+    margin-right: 10px;
+    color: white;
+    font-size: 0.8rem;
+
+}
+
+.tag_pates{
+    background-color: var(--color1);
+}
+
+.tag_ratatouille{
+    background-color: var(--color2);
+}
+
+.tag_frites{
+    background-color: var(--color4);
+}
+
+.tag_salade{
+    background-color: var(--color5);
+}
+
+  /* Entrées */
+#carteContainerEntree h2{
+    border-left: 15px solid var(--color2);
+}
+
+#carteContainerEntree .carteContainer_topPart{
+    border-bottom: 2px dashed var(--color2);
+}
+#carteContainerEntree h3::first-letter{
+    color : var(--color2);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+  /* Plats */
+
+#carteContainerPlat h2{
+    border-left: 15px solid var(--color5);
+}
+#carteContainerPlat .carteContainer_topPart{
+    border-bottom: 2px dashed var(--color5);
+}
+#carteContainerPlat h3::first-letter{
+    color : var(--color5);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+  /* Desserts */
+
+#carteContainerDessert h2{
+    border-left: 15px solid var(--color4);
+}
+
+#carteContainerDessert h3::first-letter{
+    color : var(--color4);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#carteContainerDessert .carteContainer_topPart{
+    border-bottom: 2px dashed var(--color4);
+}

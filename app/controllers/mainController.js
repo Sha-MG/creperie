@@ -4,7 +4,7 @@ const mainController = {
 
     getIndex(req, res){
 
-        res.render('index')
+        res.render('index', {css : 'index' })
     },
 
     async getAllPlats(req, res){
@@ -19,7 +19,7 @@ const mainController = {
                 ]
         })
 
-        res.render('carte', {platsList})
+        res.render('carte', {platsList, css: 'carte'})
 
         }catch(error){
             console.log(error)

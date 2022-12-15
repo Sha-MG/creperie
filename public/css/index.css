@@ -1,0 +1,150 @@
+:root {
+    --color1 : #cda364;
+    --color2 : #c45b0c;
+    --color3 : #fcf9ec;
+    --color4 : #efc34f;
+    --color5 : #8baec4;
+    --color6 : #053d57;
+  }
+  
+  
+
+/* Image en haut */
+
+#imageIndex{
+
+    background-image: url(../img/galette2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position-y: -200px;
+    width: 100vw;
+    height: 30vh;
+}
+
+#imageIndexContainer {
+    background-color: rgba(255, 255, 255, 0.6);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100vw;
+    height: 30vh;
+    border-bottom: 5px solid var(--color4);
+}
+
+#indexTitle { 
+    grid-area: 3 / 4 / 7 / 2;; 
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    }
+
+#indexDescription { 
+    grid-area: 5 / 3 / 8 / 5;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color4);
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: 400;
+    }
+
+/* Bloc présentation */
+
+#presentationIndex {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 5vh;
+    grid-row-gap: 5vh;
+    }
+    
+#presentationIndex__blocHistoire { 
+    grid-area: 2 / 3 / 5 / 7; 
+    background-color: white;
+    padding: 40px;
+    padding-bottom: 100px;
+    font-size: 1.2rem ;
+    text-align: justify;
+    }
+
+#presentationIndex__blocHistoire h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--color4);
+    padding-bottom: 10px;
+    }
+
+#presentationIndex__blocProduits { 
+    grid-area: 4 / 4 / 6 / 6; 
+    background-color: var(--color4);
+    text-transform: uppercase;
+    padding: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: justify;
+    border: 3px solid var(--color2);
+
+    }
+
+#presentationIndex__platsevents { 
+    grid-area: 6 / 3 / 12 / 5; 
+    background-color: white;
+    padding: 40px;
+    text-align: justify;
+    font-size: 1.1rem;
+    }
+
+h3 {
+    text-align: center;
+    border-bottom: 3px solid var(--color5);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.presentationIndex__images{
+    width: 100%;
+    background-size: cover;
+    background-position-x: -50px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+
+#presentationIndex__coktails { 
+    grid-area: 6 / 5 / 12 / 7; 
+    background-color: white;
+    padding: 40px;
+    text-align: justify;
+}
+
+#presentationIndex__horaires{
+    grid-area: 12 / 3 / 12 / 4; 
+    background-color: var(--color5);
+    color: white;
+    padding: 30px;
+    text-align: justify;
+    font-size: 0.9rem;
+}
+
+h4{
+	text-align: center;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 3px solid white;
+}
+
+#presentationIndex__adresse{
+    grid-area: 12 / 4 / 12 / 7; 
+    background-color: white;
+    padding: 40px;
+}
+
+#presentationIndex__adresse h4 {
+    border-bottom: 3px solid var(--color2);
+}
+
+#carteIndex{
+    width: 100%;
+}
