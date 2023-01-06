@@ -9,10 +9,6 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 
 ----
 
-- Réservation
-
-----
-
 - Système de connexion
 - Profil avec adresse
 - CRUD de son propre profil
@@ -20,6 +16,13 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 ----
 - Points de fidélité
 - Commande
+    - GeoDistance.js pour check
+    - Si ok accès commande
+
+----
+
+- Réservation
+  
 ----
 
 - Profil admin

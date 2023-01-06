@@ -1,0 +1,104 @@
+#globalProfilContainer{
+    width: 70%;
+    padding: 20px;
+    background-color: white;
+    margin: 5vw auto;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+#errorMessage{
+    grid-area: 2/2/3/15 ;
+    text-align: center;
+}
+
+h1{
+
+    text-align: center;
+    grid-area: 1/1/2/16 ;
+}
+
+aside {
+    background-color: #eaeaea;
+    width: 25%;
+    padding : 10px;
+    text-align: center;
+    grid-area: 2 / 1 / 11 / 12;
+}
+
+button, #saveButton {
+    padding : 15px ;
+    text-align: center;
+    margin: 3vh auto;
+    border-radius: 5px;
+    background-color: var(--color4);
+    border: none;
+    color: var(--color3);
+    font-size: large;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+button:hover,
+button:focus, 
+#saveButton:hover,
+#saveButton:focus {
+  box-shadow: inset 0 0 0 2em var(--color2);
+  border: none;
+}
+
+.decoButton{
+    border: none;
+    text-decoration: none;
+    padding : 5px;
+    grid-area: 12 / 7 / 14 / 10;
+    text-align: center;
+}
+
+.commandesContainer{
+    grid-area: 2 / 4 / 12 / 16;
+    background-color: #eaeaea;
+    overflow-y: scroll;
+    padding: 30px;
+}
+
+
+.profilList {
+    font-weight: 500;
+}
+
+.commandeDescription{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.platsCommande{
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: flex-start;
+    gap : 40px;
+    border-bottom: 1px solid var(--color5);
+}
+
+.uneCommande{
+    padding: 10px;
+}
+
+
+/* Modif Form */
+
+
+input{
+
+    width: 100%;
+}
+
+.listTitle{
+    border-bottom: 1px solid var(--color4);
+    font-weight: 600;
+}

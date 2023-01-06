@@ -1,0 +1,18 @@
+#loginZone{
+    background-color: white;
+    width: 50%;
+    padding: 5vh;
+    margin: 10vh auto;
+}
+
+h2{ 
+    margin: 5vh;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}

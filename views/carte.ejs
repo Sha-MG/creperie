@@ -7,14 +7,17 @@
             <% for(entrée of entreeList){ %>
                 <article class="carteContainer_platContainer">
                     <div class="carteContainer_topPart">
-                        <h3 class="carteContainer_nom"><%= entrée.nom %></h3>
-                        <p class="carteContainer_prix"><%= entrée.prix %></p>
+                        <div class="carteContainer_topPart_noplus">
+                            <h3 class="carteContainer_nom"><%= entrée.nom %></h3>
+                            <p class="carteContainer_prix"><%= entrée.prix %></p>
+                        </div>
+                        <a href="#" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
                     </div>
                     <p class="carteContainer_recette"><%= entrée.recette %> </p>
                     <div class="carteContainer_divIcones">
                         <div>
                             <% for(allergene of entrée.vignettes){ %>
-                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone"></i>
+                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone" title="<%=allergene.nom %>"></i>
                             <%}%>
                         </div>
                     </div>
@@ -28,14 +31,17 @@
             <% for(plat of platsList){ %>
                 <article class="carteContainer_platContainer">
                     <div class="carteContainer_topPart">
-                        <h3 class="carteContainer_nom"><%= plat.nom %></h3>
-                        <p class="carteContainer_prix"><%= plat.prix %></p>
+                        <div class="carteContainer_topPart_noplus">
+                            <h3 class="carteContainer_nom"><%= plat.nom %></h3>
+                            <p class="carteContainer_prix"><%= plat.prix %></p>
+                        </div>
+                        <a href="#" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
                     </div>
                     <p class="carteContainer_recette"><%= plat.recette %> </p>
                     <div class="carteContainer_divIcones">
                         <div>
                             <% for(allergene of plat.vignettes){ %>
-                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone"></i>
+                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone " title="<%=allergene.nom %>"></i>
                             <%}%>
                         </div>
                         <div class="carteContainer_tag">
@@ -54,14 +60,17 @@
             <% for(dessert of dessertList){ %>
                 <article class="carteContainer_platContainer">
                     <div class="carteContainer_topPart">
-                        <h3 class="carteContainer_nom"><%= dessert.nom %></h3>
-                        <p class="carteContainer_prix"><%= dessert.prix %></p>
+                        <div class="carteContainer_topPart_noplus">
+                            <h3 class="carteContainer_nom"><%= dessert.nom %></h3>
+                            <p class="carteContainer_prix"><%= dessert.prix %></p>
+                        </div>
+                        <a href="#" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
                     </div>
                     <p class="carteContainer_recette"><%= dessert.recette %> </p>
                     <div class="carteContainer_divIcones">
                         <div>
                             <% for(allergene of dessert.vignettes){ %>
-                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone"></i>
+                                <i class="fa-solid <%= allergene.icone %> fa-lg carteContainer_icone" title="<%=allergene.nom %>"></i>
                             <%}%>
                         </div>
                     </div>
@@ -77,3 +86,5 @@
 
 
 <%- include('partials/footer') %>
+</body>
+</html>

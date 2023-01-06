@@ -1,0 +1,93 @@
+:root {
+    --color1 : #cda364;
+    --color2 : #c45b0c;
+    --color3 : #fcf9ec;
+    --color4 : #efc34f;
+    --color5 : #8baec4;
+    --color6 : #053d57;
+  }
+  
+#loginZone{
+    background-color: white;
+    width: 50%;
+    padding: 5vh;
+    margin: 10vh auto;
+}
+
+h2{ 
+    margin: 5vh;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#email, #motdepasse { 
+    width: 50%;
+    text-align: center;
+    margin: 3vh auto;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 5px solid var(--color4);
+    background-color: #eaeaea;
+    transition: 0.4s;
+}
+
+input:focus, input:hover {
+
+    border: none;
+    border-bottom: 5px solid var(--color2);
+    outline: none;
+}
+
+label {
+    padding : 10px ;
+}
+
+.button {
+    padding : 15px ;
+    text-align: center;
+    margin: 3vh auto;
+    border-radius: 5px;
+    background-color: var(--color4);
+    border: none;
+    color: var(--color3);
+    font-size: large;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: inset 0 0 0 2em var(--color2);
+  border: none;
+}
+
+.error{
+
+    background-color: var(--color2);
+    color: var(--color3);
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+}
+
+#inscriptionBoutton{
+    color: var(--color6);
+    text-decoration: none;
+    transition : 0.4s;
+}
+
+#inscriptionBoutton:hover { 
+    color: #c45b0c;
+}

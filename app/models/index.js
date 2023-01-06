@@ -1,6 +1,8 @@
 const Plat = require('./Plats.js');
 const Vignette = require('./Vignettes.js');
 const Accompagnement = require('./Accompagnements.js');
+const Profil = require ('./Profil.js')
+const Commande = require('./Commandes')
 
 // Relations Plat <-> Vignette
 Plat.belongsToMany(Vignette, {
@@ -31,4 +33,30 @@ Accompagnement.belongsToMany(Plat, {
     otherKey: 'accompagnements_id'
 });
 
-module.exports = { Vignette, Plat, Accompagnement };
+// Relation Profil <.> Commandes
+Profil.hasMany(Commande, {
+    foreignKey: "profils_id",
+    as: "commandes" 
+});
+Commande.belongsTo(Profil, {
+    foreignKey: "profils_id",
+    as: "profil"
+})
+
+// Relation Commandes <.> Plats
+Commande.belongsToMany(Plat, {
+    as: 'plats',
+    through: 'commandes_has_plats',
+    foreignKey: 'commandes_id',
+    otherKey: 'plats_id'
+});
+Plat.belongsToMany(Commande, {
+    as: 'commandes',
+    through: 'commandes_has_plats',
+    foreignKey: 'plats_id',
+    otherKey: 'commandes_id'
+
+});
+
+
+module.exports = { Vignette, Plat, Accompagnement, Profil };

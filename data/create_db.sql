@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS "commandes" (
     "profils_id" INTEGER NOT NULL REFERENCES "profils"("id") ON DELETE CASCADE,
     "prix" MONEY NOT NULL,
     "statut" TEXT NOT NULL,
-    "created_at" TIMESTAMP,
-    "updated_at" TIMESTAMP
+    "created_at" DATE,
+    "updated_at" DATE
 );
 
 CREATE TABLE IF NOT EXISTS "commandes_has_plats" (

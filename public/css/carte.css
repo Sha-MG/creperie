@@ -17,11 +17,17 @@
 }
 
 .carteContainer_topPart{
+
     display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
     align-items: center;
-    padding-left: 10px;
+}
+
+.carteContainer_topPart_noplus{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
 }
 
 .carteContainer_nom{
@@ -63,6 +69,7 @@ h2{
     width:30vw;
 }
 
+
 /* Tags couleurs */
 .accompagnement{
 
@@ -75,19 +82,19 @@ h2{
 }
 
 .tag_pates{
-    background-color: var(--color1);
+    background-color: #cabc98;
 }
 
 .tag_ratatouille{
-    background-color: var(--color2);
+    background-color: #e8ad6e;
 }
 
 .tag_frites{
-    background-color: var(--color4);
+    background-color: #f8d888;
 }
 
 .tag_salade{
-    background-color: var(--color5);
+    background-color: #9bc793;
 }
 
   /* Entrées */
@@ -98,7 +105,7 @@ h2{
 #carteContainerEntree .carteContainer_topPart{
     border-bottom: 2px dashed var(--color2);
 }
-#carteContainerEntree h3::first-letter{
+#carteContainerEntree h3::first-letter, #carteContainerEntree .fa-plus{
     color : var(--color2);
     font-size: 1.5rem;
     font-weight: bold;
@@ -112,7 +119,7 @@ h2{
 #carteContainerPlat .carteContainer_topPart{
     border-bottom: 2px dashed var(--color5);
 }
-#carteContainerPlat h3::first-letter{
+#carteContainerPlat h3::first-letter, #carteContainerPlat .fa-plus{
     color : var(--color5);
     font-size: 1.5rem;
     font-weight: bold;
@@ -124,7 +131,7 @@ h2{
     border-left: 15px solid var(--color4);
 }
 
-#carteContainerDessert h3::first-letter{
+#carteContainerDessert h3::first-letter, #carteContainerDessert .fa-plus{
     color : var(--color4);
     font-size: 1.5rem;
     font-weight: bold;
@@ -133,3 +140,13 @@ h2{
 #carteContainerDessert .carteContainer_topPart{
     border-bottom: 2px dashed var(--color4);
 }
+
+.addPlat{
+    padding:5px;
+    transition: all 0.3s ease-in-out;
+}
+.addPlat:hover{
+    border-radius: 50%;
+    background-color: var(--color6);
+}
+
