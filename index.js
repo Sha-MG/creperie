@@ -23,7 +23,7 @@ app.use(session({
 }));
 
 app.use(connexionMiddleware);
-app.use(router);
+app.use(router); 
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

@@ -2,7 +2,9 @@ const { Accompagnement, Plat, Vignette, Profil } = require('../models/index.js')
 const dayjs = require('dayjs')
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require('../database.js');
-
+const validator = require("email-validator");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const loginController = {
 
@@ -37,7 +39,7 @@ const loginController = {
             error: "Aucun utilisateur n'existe avec cet email."
           });
       }
-      if (password !== profilFound.password) {
+      if (bcrypt.compare(password, profilFound.password, function(err, result){})) {
           return res.render('login', {
               error: "Mot de passe invalide.",
               css: 'login'
@@ -65,10 +67,6 @@ const loginController = {
     async profilModify(req, res){
 
       const mail = req.session.profil.mail
-      const email = req.body.mail
-
-      console.log('ICI LE MAIL ________________')
-      console.log(email)
 
       const profilFound = await Profil.findOne({ 
         where: { mail }
@@ -91,13 +89,71 @@ const loginController = {
         req.session.profil.adresse = req.body.adresse
       }
 
-      profilFound.save()
+      await profilFound.save()
 
       res.redirect('/profil')
     },
 
     getInscriptionPage(req, res){
       res.render('inscription', {css : 'inscription', error:''})
+    },
+
+    async handleInscription(req, res){
+      const body = req.body
+      const mail = req.body.mail.toLowerCase()
+
+      console.log(body.password + body.confirmation)
+      if(!body.nom || !body.prenom || !body.adresse || !body.mail || !body.password || !body.confirmation){
+        return res.render('inscription', {
+          error: "Tous les champs sont obligatoires.",
+          css: 'inscription'
+      });
+      }
+
+      const mailCheker = await Profil.findOne({ 
+        where: { mail }
+      })
+
+      if(mailCheker){
+        return res.render('inscription', {
+          error: "L'utilisateur existe déjà.",
+          css: 'inscription'
+      })
+      };
+
+      if(body.password !== body.confirmation){
+        return res.render('inscription', {
+          error: "Les mots de passe ne correspondent pas.",
+          css: 'inscription'
+      });
+      }
+
+      if(!validator.validate(body.mail)){
+        return res.render('inscription', {
+          error: "Veuillez entrer un e-mail valide.",
+          css: 'inscription'
+      });
+      }
+
+      const newUser = Profil.build({ 
+        nom: body.nom,
+        prenom : body.prenom,
+        adresse : body.adresse,
+        mail: body.mail,
+        password: body.password,
+        points: 0,
+        role: 'customer'
+      });
+
+      bcrypt.genSalt(saltRounds, function(err, salt) {
+        bcrypt.hash(body.password, salt, function(err, hash) {
+          newUser.password = hash
+        });
+    });
+
+      await newUser.save()
+      res.redirect('/login')
+
     }
 }
 

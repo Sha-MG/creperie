@@ -25,6 +25,10 @@ const mainController = {
             console.log(error)
             res.status(500).render('500',{error})
         }
+    },
+
+    noPage(req, res){
+        res.status(404).render('404', {css: '404'})
     }
 };
 

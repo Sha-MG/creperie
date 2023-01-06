@@ -5,6 +5,7 @@ const profil = {
     },
     
     handleModifyClick : function(){
+        
         const modifyButton = document.getElementById('modifyButton')
         const forms = document.querySelectorAll('.modifyForm')
         const profilList = document.querySelectorAll('.modifyInput')
@@ -12,8 +13,7 @@ const profil = {
 
         modifyButton.addEventListener('click', (event)=>{
             event.preventDefault()
-            console.log(forms)
-
+            console.log('Hello')
             for(const form of forms){
             form.classList.remove('d-none')
             }
@@ -28,18 +28,8 @@ const profil = {
         })
     },
 
-    handleModification : function() {
-        const modifyButton = document.getElementById('modifyButton')
-        const forms = document.querySelectorAll('.modifyForm')
-        const profilList = document.querySelectorAll('.modifyInput')
-        const saveButton = document.getElementById('saveButton')
-
-        saveButton.addEventListener('click', ()=>{
-            
-        })
-
-    }
 
 };
 
-export default profil;
+
+document.addEventListener('DOMContentLoaded', profil.init);

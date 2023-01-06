@@ -5,7 +5,7 @@
         <h2>Les Entrées</h2>
         <div class="carteContainerList">
             <% for(entrée of entreeList){ %>
-                <article class="carteContainer_platContainer">
+                <article class="carteContainer_platContainer" value="<%=entrée.id%>" ">
                     <div class="carteContainer_topPart">
                         <div class="carteContainer_topPart_noplus">
                             <h3 class="carteContainer_nom"><%= entrée.nom %></h3>
@@ -29,7 +29,7 @@
         <h2>Les Plats</h2>
         <div class="carteContainerList" >
             <% for(plat of platsList){ %>
-                <article class="carteContainer_platContainer">
+                <article class="carteContainer_platContainer" value="<%=plat.id%>">
                     <div class="carteContainer_topPart">
                         <div class="carteContainer_topPart_noplus">
                             <h3 class="carteContainer_nom"><%= plat.nom %></h3>
@@ -58,7 +58,7 @@
         <h2>Les Desserts</h2>
         <div class="carteContainerList" >
             <% for(dessert of dessertList){ %>
-                <article class="carteContainer_platContainer">
+                <article class="carteContainer_platContainer" value="<%=dessert.id%>">
                     <div class="carteContainer_topPart">
                         <div class="carteContainer_topPart_noplus">
                             <h3 class="carteContainer_nom"><%= dessert.nom %></h3>
@@ -81,10 +81,9 @@
 
 
 </section>
-
-
-
-
 <%- include('partials/footer') %>
+
+<script src="./js/carte.js"></script>
+
 </body>
 </html>

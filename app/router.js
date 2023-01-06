@@ -16,10 +16,16 @@ router.get('/login', loginController.renderLoginPage);
 router.post('/login', loginController.loginProfil);
 router.get('/deconnexion', loginController.deconnexion)
 router.get('/inscription', loginController.getInscriptionPage)
+router.post('/inscription', loginController.handleInscription)
 
+// Profil
 router.get('/profil', loginController.profilPage);
 router.post('/profil', loginController.profilModify);
 
+// 404
+router.use((req, res) => {
+    res.status(404).render('404', { css: "404" })
+  })
 
 
 module.exports = router;
