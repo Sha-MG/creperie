@@ -1,0 +1,32 @@
+section {
+    width : 70vw;
+    background-color: white;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 20px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    padding: 5vh;
+    margin-bottom: 5vh;
+}
+
+.platDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 3px dotted var(--color5);
+}
+
+.platInfo{  
+    margin: 0;
+    align-items: center;
+}
+
+#total{
+    margin-top: 5vh;
+    padding: 5vh;
+}

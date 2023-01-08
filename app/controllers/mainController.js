@@ -9,7 +9,9 @@ const mainController = {
 
     async getAllPlats(req, res){
         try{
-            
+        
+        // Chargement de la carte avec association des accompagnements et des allergies. 
+
             const platsList = await Plat.findAll({
                 include: [
                     {
@@ -29,6 +31,27 @@ const mainController = {
 
     noPage(req, res){
         res.status(404).render('404', {css: '404'})
+    },
+
+    getPanier(req, res){
+
+        console.log(req.session.commande)
+
+    // Si y a pas déjà de commande en cours, on la créée.
+        if(!req.session.commande){
+
+            req.session.commande = []
+            req.session.totalCommande = 0
+            
+        }
+
+    // Dans tous les cas on transmet les données de la session en cours aux locals
+    // pour qu'ils soient dispo pour les vues EJS
+    
+        res.locals.commande = req.session.commande
+        res.locals.totalCommande = req.session.totalCommande
+
+        res.render('panier', {css:'panier'})
     }
 };
 

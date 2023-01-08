@@ -1,6 +1,9 @@
 <%- include('partials/header') %>
 
 <section id="carteContainerGlobal">
+    <div>
+        <p><%= message%></p>
+    </div>
     <article id="carteContainerEntree" >
         <h2>Les Entrées</h2>
         <div class="carteContainerList">
@@ -11,7 +14,7 @@
                             <h3 class="carteContainer_nom"><%= entrée.nom %></h3>
                             <p class="carteContainer_prix"><%= entrée.prix %></p>
                         </div>
-                        <a href="#" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
+                        <a href="/carte/<%=entrée.id%>" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
                     </div>
                     <p class="carteContainer_recette"><%= entrée.recette %> </p>
                     <div class="carteContainer_divIcones">
@@ -35,7 +38,7 @@
                             <h3 class="carteContainer_nom"><%= plat.nom %></h3>
                             <p class="carteContainer_prix"><%= plat.prix %></p>
                         </div>
-                        <a href="#" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
+                        <a href="/carte/<%=plat.id%>" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
                     </div>
                     <p class="carteContainer_recette"><%= plat.recette %> </p>
                     <div class="carteContainer_divIcones">
@@ -64,7 +67,7 @@
                             <h3 class="carteContainer_nom"><%= dessert.nom %></h3>
                             <p class="carteContainer_prix"><%= dessert.prix %></p>
                         </div>
-                        <a href="#" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
+                        <a href="/carte/<%=dessert.id%>" class="addPlat"><i class="fa-solid fa-plus fa-2xl"></i></a>
                     </div>
                     <p class="carteContainer_recette"><%= dessert.recette %> </p>
                     <div class="carteContainer_divIcones">

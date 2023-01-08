@@ -2,12 +2,26 @@
 
 <section>
 
-    <h1>Envie de commander ?</h1>
+    <h1>Votre commande :</h1>
 
-    <p>Nous ne livrons que dans un rayon de 20 kilomètres autour du restaurant, pouvez-vous nous donner votre adresse ?</p>
-    <form>
-        <input>
-    </form>
+    <%if(locals.commande.length>0){ for(plat of locals.commande){ %>
+       <div class="platDiv">
+        <p class="platInfo"> <%= plat.nom%> </p>
+        <p class="platInfo"> <%= plat.prix %></p>
+        <a href="/carte/supp/<%= plat.id%>"><i class="fa-solid fa-xmark"></i></a>
+       </div> 
+    <%}%>
+    <div id="total">
+        <h2>Total de votre commande :</h2>
+        <p><%= locals.totalCommande %></p>
+    </div>
+    <%}else{%>
+
+        <p>Oups, il semblerait que vous n'ayez rien séléctionné.</p>
+        <a href="/carte">La carte</a>
+
+    <%}%>
+
 </section>
 
 <%- include('partials/footer') %>

@@ -8,8 +8,12 @@ const router = express.Router();
 
 
 // Routes basiques
-router.get('/carte', carteController.getAllPlats );
 router.get('/', mainController.getIndex);
+router.get('/panier', mainController.getPanier) ;
+
+// Routes carte
+router.get('/carte', carteController.getAllPlats );
+router.get('/carte/:id', carteController.addPlats);
 
 // Login & Inscription
 router.get('/login', loginController.renderLoginPage);
