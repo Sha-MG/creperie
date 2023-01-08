@@ -1,25 +1,17 @@
 const carte = {
 
     init: async function() {
-        carte.handleCardClick()
+        carte.handleCroixClick()
     },
 
-    handleCardClick: function(){
+    handleCroixClick: function(){
 
-        const croix = document.querySelectorAll('i.fa-plus') ;
+        const croix = document.querySelector('.fa-xmark') ;
 
-        for(const chaqueCroix of croix){
-
-            chaqueCroix.addEventListener('click', (event)=>{
-
-                let value = event.currentTarget.closest('article')
-                value = value.getAttribute("value")
-                console.log(value)
-
-
-            })
-        }
-
+        croix.addEventListener('click', (event) => {
+            let div = event.currentTarget.closest('.messageCommandeAdd')
+            div.remove()
+        })
 
     }
 

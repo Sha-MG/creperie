@@ -17,10 +17,23 @@
         <h2>Total de votre commande :</h2>
         <p id="totalPrix"><%= locals.totalCommande %> €</p>
     </div>
+
+    <% if(!locals.profil){ %>
+        
+        <a href="/login" class="boutton">Connectez-vous pour valider</a>
+
     <%}else{%>
 
-        <p>Oups, il semblerait que vous n'ayez rien séléctionné.</p>
-        <a href="/carte">La carte</a>
+        <form>
+            <input type="submit" method="POST" value="Commander" class="boutton">
+        </form>
+        
+    <%}}else{%>
+        <div class="messageNoCommande">
+            <p>Oups, il semblerait que vous n'ayez rien séléctionné.</p>
+            <a href="/carte"  class="boutton">La carte</a>
+        </div>
+
 
     <%}%>
 

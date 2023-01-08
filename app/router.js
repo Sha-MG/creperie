@@ -1,6 +1,7 @@
 const express = require( 'express');
 
 const carteController = require('./controllers/carteController');
+const commandeController = require('./controllers/commandeController');
 const loginController = require('./controllers/loginController');
 const mainController = require('./controllers/mainController')
 const router = express.Router();
@@ -9,11 +10,13 @@ const router = express.Router();
 // Routes basiques
 router.get('/', mainController.getIndex);
 router.get('/panier', mainController.getPanier) ;
+router.get('/contact', mainController.getContactPage)
 
 // Routes carte & panier
 router.get('/carte', carteController.getAllPlats );
 router.get('/carte/:id', carteController.addPlats);
 router.get('/carte/supp/:id', carteController.delPlats);
+router.post('/panier', commandeController.handleGettingCommande);
 
 // Login & Inscription
 router.get('/login', loginController.renderLoginPage);

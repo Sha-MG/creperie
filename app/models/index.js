@@ -59,4 +59,4 @@ Plat.belongsToMany(Commande, {
 });
 
 
-module.exports = { Vignette, Plat, Accompagnement, Profil };
+module.exports = { Vignette, Plat, Accompagnement, Profil, Commande };

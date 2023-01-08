@@ -112,7 +112,7 @@ const carteController = {
             req.session.totalCommande += parseFloat(prix)
             res.locals.totalCommande = req.session.totalCommande
 
-            res.render('carte', {css: "carte", dessertList, platsList, entreeList, message:`Vous avez ajouté ${platToAdd.nom} à votre commande.`})
+            res.render('carte', {css: "carte", dessertList, platsList, entreeList, platAdded: platToAdd.nom })
 
         }catch(error) {
         

@@ -50,6 +50,12 @@ const mainController = {
         res.locals.totalCommande = req.session.totalCommande
 
         res.render('panier', {css:'panier'})
+    },
+
+    getContactPage(req, res){
+
+        res.render('contact', {css:'contact'})
+
     }
 };
 

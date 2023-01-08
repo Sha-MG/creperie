@@ -1,12 +1,25 @@
 <%- include('partials/header') %>
 
 <section id="carteContainerGlobal">
-    <div>
-        <p><%= message%></p>
-    </div>
+    
+<!-- Si y a une commande c'est qu'on a ajouté un plat => on affiche le message de confirmation d'ajout. -->
+
+    <% if(locals.commande){ %>
+        <div class="messageCommandeAdd">
+            <p> Vous avez ajouté <strong><%= platAdded %></strong> à votre panier.</p>
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+        </div>
+
+     <% } %>
+
     <article id="carteContainerEntree" >
+
         <h2>Les Entrées</h2>
+
         <div class="carteContainerList">
+
+<!-- On affiche toutes les entrées disponibles en BDD -->
+
             <% for(entrée of entreeList){ %>
                 <article class="carteContainer_platContainer" value="<%=entrée.id%>" ">
                     <div class="carteContainer_topPart">
@@ -28,9 +41,16 @@
             <%}%>
         </div>
     </article>
+
+
     <article id="carteContainerPlat" >
+
         <h2>Les Plats</h2>
+
         <div class="carteContainerList" >
+
+<!-- On affiche tous les plats disponibles en BDD -->
+
             <% for(plat of platsList){ %>
                 <article class="carteContainer_platContainer" value="<%=plat.id%>">
                     <div class="carteContainer_topPart">
@@ -52,9 +72,15 @@
             <%}%>
         </div>
     </article>
+
     <article id="carteContainerDessert" class="carteContainerList">
+
         <h2>Les Desserts</h2>
+
         <div class="carteContainerList" >
+
+<!-- On affiche tous les desserts disponibles en BDD -->
+
             <% for(dessert of dessertList){ %>
                 <article class="carteContainer_platContainer" value="<%=dessert.id%>">
                     <div class="carteContainer_topPart">
@@ -81,7 +107,7 @@
 </section>
 <%- include('partials/footer') %>
 
-<script src="./js/carte.js"></script>
+<script src="/js/carte.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<div id="contactContainer">
+    <section class="contactInfos">
+        <h1>Contactez-nous</h1>
+        <p>Nous sommes joignable tous les jours aux horaires d’ouvertures par téléphone dans le restaurant. Pour envoyer un mail utilisez le formulaire de contact. </p>
+        <p>Vos messages nous encouragent, vos critiques toujours constructives nous permettent d’améliorer notre qualité de service. Nous en tenons compte.</p>
+        <p>Là pour vous ! Vous souhaitez organiser un évènement, privatiser, pourquoi pas ? Écrivez-nous !</p>
+        <p><span id="telNum">Notre numéro :</span> 01 02 03 04 05</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21023.665604357513!2d2.4224587252406393!3d48.801776391100304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67330223988ff%3A0x1fbb0bf00a0d995d!2sMaisons-Alfort!5e0!3m2!1sfr!2sfr!4v1671123354899!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="contactForm">
+        <div class="divForm">
+            <label for="nom">Nom & Prenom:</label>
+            <input type="" id="nom" name="nom">
+        </div>
+        <div class="divForm">
+            <label for="mail">E-mail : </label>
+            <input type="mail" id="mail" name="mail">
+        </div>
+        <div class="divForm">
+            <label for="phone">N° de téléphone :</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="divForm">
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Dites nous tout !"  rows="5" cols="30" ></textarea>
+        </div>
+        <a href="#contactContainer" class="button">Envoyer</a>
+    </section>
+</div>
+<%- include('partials/footer') %>
+<script src="/js/contact.js"></script>
+</body>
+</html>

@@ -122,3 +122,27 @@ h2{
     background-color: var(--color6);
 }
 
+
+.messageCommandeAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color5);
+    color: white;
+    padding: 20px;
+    margin-bottom: 5vh;
+}
+
+.messageCommandeAdd > i {
+    color: var(--color6);
+    transition: 0.3s;
+}
+
+.messageCommandeAdd > i:hover {
+    color: white;
+    cursor: grab ;
+}
+
+.messageCommandeAdd > p {
+    margin: 0;
+}
