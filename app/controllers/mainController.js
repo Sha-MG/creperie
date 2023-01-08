@@ -35,8 +35,6 @@ const mainController = {
 
     getPanier(req, res){
 
-        console.log(req.session.commande)
-
     // Si y a pas déjà de commande en cours, on la créée.
         if(!req.session.commande){
 
@@ -47,7 +45,7 @@ const mainController = {
 
     // Dans tous les cas on transmet les données de la session en cours aux locals
     // pour qu'ils soient dispo pour les vues EJS
-    
+
         res.locals.commande = req.session.commande
         res.locals.totalCommande = req.session.totalCommande
 

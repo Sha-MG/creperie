@@ -122,6 +122,36 @@ const carteController = {
             res.status(500).render('500',{error, css: 'error'})
         }
 
+    },
+
+    delPlats(req, res){
+
+    // On récupère la commande actuelle, le plat qu'on veux enlever et que son index dans la commande
+        let commande = req.session.commande
+        let platToDel = commande.find(plat => plat.id == req.params.id)
+        let index = commande.indexOf(platToDel)
+
+    // On créer deux tableaux : 
+    // Un avec les éléments avant le plat a enlever
+    // Un avec les élements après le plat a enlever
+    // On les regroupe pour refaire la commande
+
+        const firstArr = commande.slice(0, index);
+        const secondArr = commande.slice(index + 1);
+        let newCommande = [...firstArr , ...secondArr]
+
+    // On recalcul le prix de la commande
+        let prix= platToDel.prix
+        prix = prix.split("").filter(c => c !== '€').join('').replace(',', '.');
+
+        req.session.totalCommande -= parseFloat(prix)
+
+    // On transmet la nouvelle commande partout
+        req.session.commande = newCommande
+        res.locals.commande = req.session.commande 
+        res.locals.totalCommande = req.session.totalCommande
+
+        res.redirect('/panier')
     }
 
 }

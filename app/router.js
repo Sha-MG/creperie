@@ -3,7 +3,6 @@ const express = require( 'express');
 const carteController = require('./controllers/carteController');
 const loginController = require('./controllers/loginController');
 const mainController = require('./controllers/mainController')
-const commandeController = require('./controllers/commandecontroller')
 const router = express.Router();
 
 
@@ -11,9 +10,10 @@ const router = express.Router();
 router.get('/', mainController.getIndex);
 router.get('/panier', mainController.getPanier) ;
 
-// Routes carte
+// Routes carte & panier
 router.get('/carte', carteController.getAllPlats );
 router.get('/carte/:id', carteController.addPlats);
+router.get('/carte/supp/:id', carteController.delPlats);
 
 // Login & Inscription
 router.get('/login', loginController.renderLoginPage);
@@ -26,7 +26,7 @@ router.post('/inscription', loginController.handleInscription)
 router.get('/profil', loginController.profilPage);
 router.post('/profil', loginController.profilModify);
 
-// 404
+// 404 si la route appelée ne correspond a aucune de celles du dessus.
 router.use((req, res) => {
     res.status(404).render('404', { css: "404" })
   })

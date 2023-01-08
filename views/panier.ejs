@@ -6,14 +6,16 @@
 
     <%if(locals.commande.length>0){ for(plat of locals.commande){ %>
        <div class="platDiv">
-        <p class="platInfo"> <%= plat.nom%> </p>
-        <p class="platInfo"> <%= plat.prix %></p>
-        <a href="/carte/supp/<%= plat.id%>"><i class="fa-solid fa-xmark"></i></a>
+            <div>
+                <p class="platInfo platNom"> <%= plat.nom%> </p>
+                <p class="platInfo"> <%= plat.prix %></p>
+            </div>
+            <a href="/carte/supp/<%= plat.id%>" class="delPlat"><i class="fa-solid fa-xmark fa-2xl"></i></a>
        </div> 
     <%}%>
     <div id="total">
         <h2>Total de votre commande :</h2>
-        <p><%= locals.totalCommande %></p>
+        <p id="totalPrix"><%= locals.totalCommande %> €</p>
     </div>
     <%}else{%>
 

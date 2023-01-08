@@ -69,34 +69,6 @@ h2{
     width:30vw;
 }
 
-
-/* Tags couleurs */
-.accompagnement{
-
-    border-radius: 20px ;
-    padding: 5px;
-    margin-right: 10px;
-    color: white;
-    font-size: 0.8rem;
-
-}
-
-.tag_pates{
-    background-color: #cabc98;
-}
-
-.tag_ratatouille{
-    background-color: #e8ad6e;
-}
-
-.tag_frites{
-    background-color: #f8d888;
-}
-
-.tag_salade{
-    background-color: #9bc793;
-}
-
   /* Entrées */
 #carteContainerEntree h2{
     border-left: 15px solid var(--color2);

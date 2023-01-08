@@ -12,13 +12,28 @@ h1 {
     padding: 5vh;
     margin-bottom: 5vh;
 }
-
 .platDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.platNom::first-letter{
+    color: var(--color5);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+.platDiv>div{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
     border-bottom: 3px dotted var(--color5);
+    text-align: center;
 }
 
 .platInfo{  
@@ -26,7 +41,31 @@ h1 {
     align-items: center;
 }
 
+.delPlat i{
+    color: var(--color4);
+    transition : all 0.5s ease-in; 
+}
+
+.delPlat i:hover {
+    color: var(--color2);
+}
+
 #total{
     margin-top: 5vh;
     padding: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#total>h2{
+    font-size: 1.3rem;
+    align-items: center;
+    margin: 0;
+}
+
+#totalPrix{
+    margin: 0;
+    margin-left: 30px;
 }
