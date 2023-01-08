@@ -1,5 +1,7 @@
 
 const { Accompagnement, Plat, Vignette, Commande } = require('../models/index.js');
+const dayjs = require('dayjs')
+
 
 const commandeController = {
     
@@ -9,24 +11,33 @@ const commandeController = {
 
         let profil = req.session.profil.id
         let prix = req.session.totalCommande
-        let commande = req.session.commande
 
+        prix = prix.toString().replace(".", ",")
+
+        let commande = req.session.commande
+        let commandePlats = []
+
+// On récupère la date et on la met en format pour le Timestamp de la création de la commande
+
+        let date = new Date(Date.now()).toString()
+        date = dayjs(date).format('HH:mm DD/MM/YYYY')
+
+// On fait un tableau avec le nom des plats, puis on le met en string pour l'ajouter a la commande
+        for(let plat of commande){
+          commandePlats.push(plat.nom)
+        }
+        let commandeContenu = commandePlats.join(' | ')
+
+// On créé la nouvelle commande dans la BDD
         let newCommande = await Commande.create({   
             profils_id: profil,
             prix: prix,
-            plats: [
-                { plats_id: 1, commandes_id: 1 },
-                { plats_id: 2, commandes_id: 1 },
-                { plats_id: 3, commandes_id: 1 }
-              ]
-            }, {
-              include: [{
-                association: Plat,
-                as: 'plats'
-              }]
-            })
+            contenu: commandeContenu ,
+            statut: 'En cours',
+            createdAt: date
+        })
 
-    
+        res.redirect('/profil')
         }
     
 }

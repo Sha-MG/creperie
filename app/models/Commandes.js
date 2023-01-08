@@ -12,6 +12,10 @@ Commande.init({
         type: DataTypes.TEXT,
         allowNull: false 
     },
+    contenu: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
     createdAt: {
         type: DataTypes.DATE,
         allowNull: false

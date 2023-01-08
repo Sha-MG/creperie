@@ -63,6 +63,7 @@ button:focus,
     background-color: #eaeaea;
     overflow-y: scroll;
     padding: 30px;
+    height: 60vh;
 }
 
 

@@ -43,20 +43,6 @@ Commande.belongsTo(Profil, {
     as: "profil"
 })
 
-// Relation Commandes <.> Plats
-Commande.belongsToMany(Plat, {
-    as: 'plats',
-    through: 'commandes_has_plats',
-    foreignKey: 'commandes_id',
-    otherKey: 'plats_id'
-});
-Plat.belongsToMany(Commande, {
-    as: 'commandes',
-    through: 'commandes_has_plats',
-    foreignKey: 'plats_id',
-    otherKey: 'commandes_id'
-
-});
 
 
 module.exports = { Vignette, Plat, Accompagnement, Profil, Commande };

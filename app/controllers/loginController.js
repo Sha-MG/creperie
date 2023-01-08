@@ -1,4 +1,4 @@
-const { Accompagnement, Plat, Vignette, Profil } = require('../models/index.js');
+const { Accompagnement, Plat, Vignette, Profil, Commande } = require('../models/index.js');
 const dayjs = require('dayjs')
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require('../database.js');
@@ -22,14 +22,11 @@ const loginController = {
       const profilFound = await Profil.findOne({ 
           where: { mail }, 
           include : {
-            association: 'commandes',
-            include: {
-              association: 'plats'
-            },
-            order: [
-              ['createdAt', 'DESC'],
-          ],
-          } 
+          association: 'commandes',
+          },
+          order: [
+            ["commandes", "createdAt", "DESC"]
+        ]
 
       });
      
@@ -54,6 +51,22 @@ const loginController = {
     },
 
     async profilPage(req, res){
+      
+      const mail = req.session.profil.mail;
+
+      const profilFound = await Profil.findOne({ 
+          where: { mail }, 
+          include : {
+          association: 'commandes',
+          },
+          order: [
+            ["commandes", "createdAt", "DESC"]
+        ]
+
+      });
+     
+      req.session.profil = profilFound;
+      
       res.render('profil', {css: 'profil'})
     },
 

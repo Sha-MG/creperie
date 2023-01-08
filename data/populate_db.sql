@@ -67,25 +67,10 @@ VALUES  ('Michel', 'Bidule', '01 rue de la joie 74000 Paris', 0, 'customer', 'mi
         ('Admin', 'Admin', '34 rue du bonheur 35000 Rennes', 10, 'admin', 'admin@gmail.com', 'admin')
         ;
 
-INSERT INTO "commandes" ("profils_id", "prix", "statut", "created_at", "updated_at")
-VALUES  (1, 48, 'Terminé', '2021-01-19 03:14:07', '2021-01-19 04:10:01' ),
-        (1, 32, 'En cours', '2022-04-14 11:45:34', null),
-        (1, 64, 'Terminé', '2022-04-14 11:45:34', null)
-        ;
-
-INSERT INTO "commandes_has_plats" ("commandes_id", "plats_id")
-VALUES  (1, 3),
-        (1, 5),
-        (1, 4),
-        (2, 3),
-        (2, 5),
-        (2, 6),
-        (2, 1),
-        (3, 5),
-        (3, 4),
-        (3, 3),
-        (3, 5),
-        (3, 6)
+INSERT INTO "commandes" ("profils_id", "prix", "statut", "contenu", "created_at", "updated_at")
+VALUES  (1, 48, 'Terminé', 'Galette pouet pouet, Tiramisu, Salade, Tisamisu','2021-01-19 03:14:07', '2021-01-19 04:10:01' ),
+        (1, 32, 'En cours', 'Salade, Tisamisu, Galette pouet pouet ', '2022-04-14 11:45:34', null),
+        (1, 64, 'Terminé', 'Tiramisu, Salade, Salade', '2022-04-14 11:45:34', null)
         ;
 
 COMMIT ;
