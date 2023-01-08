@@ -4,20 +4,21 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 
 ## To-do list :
 
-- Vitrine de la crêperie
-- Accès à la carte
+- ✔️ Vitrine de la crêperie
+- ✔️ Accès à la carte
 
 ----
 
-- Système de connexion
-- Profil avec adresse
-- CRUD de son propre profil
+-  ✔️ Système de connexion
+- ✔️ Profil avec adresse
+- ✔️ CRUD de son propre profil
 
 ----
 - Points de fidélité
 - Commande
-    - GeoDistance.js pour check
-    - Si ok accès commande
+    - ✔️ ajout de plats
+    - ✔️ suppression de plat
+    - validation de la commande en bdd
 
 ----
 
