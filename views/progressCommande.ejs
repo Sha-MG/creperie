@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+    <section id="containerGlobal">
+        <% if(locals.profil.role === "admin"){ %>
+        <p>Coucou t'es admin</p>
+
+
+        <%}else{%>
+
+            <div class="messageNoAdmin">
+                <i class="fa-solid fa-circle-xmark fa-2xl"></i>
+                <p>Hép hép hép tu n'es pas censé voir ça !</p>
+            </div>
+            
+        <%}%>
+    </section>
+<%- include('partials/footer')%>
+
+</body>
+</html>

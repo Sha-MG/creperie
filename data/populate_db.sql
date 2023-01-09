@@ -19,13 +19,6 @@ VALUES  ('Poisson', 'fa-fish'),
         ;
 
 
-INSERT INTO "accompagnements" ("nom", "couleur")
-VALUES  ('Frites', 'frites'),
-        ('Salade', 'salade'),
-        ('Pâtes', 'pates'),
-        ('Ratatouille', 'ratatouille')
-        ;
-
 INSERT INTO "plats_has_vignettes" ("plats_id", "vignettes_id")
 VALUES  (1, 1),
         (1, 4),

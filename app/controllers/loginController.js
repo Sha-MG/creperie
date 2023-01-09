@@ -15,10 +15,11 @@ const loginController = {
 
     async loginProfil(req, res){
 
-
-      const mail = req.body.mail;
+// On récupère le mail et le password
+      const mail = req.body.mail.toLowerCase();
       const password = req.body.password;
 
+// On cherche un profil avec le mail indiqué et on y joins les commandes
       const profilFound = await Profil.findOne({ 
           where: { mail }, 
           include : {
@@ -30,12 +31,15 @@ const loginController = {
 
       });
      
+// Si y a pas de profil
       if (!profilFound) {
           return res.render('login', {
             css: 'login',
             error: "Aucun utilisateur n'existe avec cet email."
           });
       }
+
+// Si le password n'est pas bon
       if (bcrypt.compare(password, profilFound.password, function(err, result){})) {
           return res.render('login', {
               error: "Mot de passe invalide.",
@@ -43,68 +47,13 @@ const loginController = {
           });
       }
 
+
+// On setup la session avec le profil en enlevant le mdp
       req.session.profil = profilFound;
       delete req.session.profil.password;
 
       res.redirect('/profil') ;
 
-    },
-
-    async profilPage(req, res){
-      
-      const mail = req.session.profil.mail;
-
-      const profilFound = await Profil.findOne({ 
-          where: { mail }, 
-          include : {
-          association: 'commandes',
-          },
-          order: [
-            ["commandes", "createdAt", "DESC"]
-        ]
-
-      });
-     
-      req.session.profil = profilFound;
-      
-      res.render('profil', {css: 'profil'})
-    },
-
-    deconnexion(req, res){
-
-      req.session.profil = false ;
-      res.locals.profil = false;
-      res.redirect('/login')
-    },
-
-    async profilModify(req, res){
-
-      const mail = req.session.profil.mail
-
-      const profilFound = await Profil.findOne({ 
-        where: { mail }
-      })
-
-      if(req.body.nom){
-        profilFound.nom = req.body.nom
-        req.session.profil.nom = req.body.nom
-      }
-      if(req.body.prenom){
-        profilFound.prenom = req.body.prenom
-        req.session.profil.prenom = req.body.prenom
-      }
-      if(req.body.mail){
-        profilFound.mail = req.body.mail
-        req.session.profil.mail = req.body.mail
-      }
-      if(req.body.adresse){
-        profilFound.adresse = req.body.adresse
-        req.session.profil.adresse = req.body.adresse
-      }
-
-      await profilFound.save()
-
-      res.redirect('/profil')
     },
 
     getInscriptionPage(req, res){
@@ -115,7 +64,6 @@ const loginController = {
       const body = req.body
       const mail = req.body.mail.toLowerCase()
 
-      console.log(body.password + body.confirmation)
       if(!body.nom || !body.prenom || !body.adresse || !body.mail || !body.password || !body.confirmation){
         return res.render('inscription', {
           error: "Tous les champs sont obligatoires.",

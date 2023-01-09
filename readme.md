@@ -15,10 +15,10 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 
 ----
 - Points de fidélité
-- Commande
+- ✔️ Commande
     - ✔️ ajout de plats
     - ✔️ suppression de plat
-    - validation de la commande en bdd
+    - ✔️ validation de la commande en bdd
 
 ----
 

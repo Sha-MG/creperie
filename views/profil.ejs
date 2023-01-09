@@ -1,12 +1,16 @@
 <%- include('partials/header') %>
 
 <section id="globalProfilContainer">
+
+<!-- Si y a pas de connexion enregistrée -->
 <% if(locals.profil === false){ %>
     <div id="errorMessage">
         <p>Vous devez vous connecter pour accéder à votre profil.</p>
         <a href="/login"> <button>Par ici :)</button></a>
     </div>
-<%}else{%>
+
+<!-- Si le profil connecté est un customer -->
+<%}else if(locals.profil.role == "customer"){%>
     <h1>Bonjour <%= locals.profil.prenom %></h1>
     <aside>
         <form action="" method="POST">
@@ -52,7 +56,26 @@
         <%}%>
     </section>
     <a href="/deconnexion" class="decoButton"><button>Déconnexion</button></a>
+
+<!-- Si le profil connecté est un admin -->
+
+<%}else if(locals.profil.role === "admin"){%>    
+    <h1>Salut chef !</h1>
+    
+    <a href="/profil/cartemodif" class="boutton cartModifier"><p>Modifier la carte</p></a>
+    <a href="/profil/commandeProgress" class="boutton commandeCheck"><p>Commandes en cours</p></a>
+    <a href="/profil/commandeHistory" class="boutton commandeHistory"><p>Voir toutes les commandes</p></a>
+    <a href="/profil/modifProfil" class="boutton profilModifier"><p>Modifier un profil</p></a>
+
+    <a href="/deconnexion" class="decoButton"><button>Déconnexion</button></a>
+<!-- Si on sais pas dans le doute error -->
+<%}else{%>
+    <div id="errorMessage">
+        <p>Vous devez vous connecter pour accéder à votre profil.</p>
+        <a href="/login"> <button>Par ici :)</button></a>
+    </div>
 <%}%>
+
 </section>
 
 <%- include('partials/footer') %>

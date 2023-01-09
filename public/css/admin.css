@@ -1,0 +1,115 @@
+#containerGlobal{
+    width: 70vw;
+    background-color: white;
+    margin: auto;
+    margin-top: 5vh;
+    min-height: 70vh;
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+}
+
+h1{
+
+}
+h2{
+    text-align: center;
+}
+#modifContainer{
+    width: 45%;
+    border-right: 4px dotted var(--color4);
+}
+
+#addContainer{
+    width: 45%;
+}
+
+.messageNoAdmin{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--color4);
+    padding: 20px;
+    font-size: 1.3rem;
+    
+}
+
+.messageNoAdmin>p {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+form, select{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+form > div {
+    margin: 15px;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 5px solid var(--color4);
+    background-color: #eaeaea;
+    transition: 0.4s;
+}
+
+input:focus, input:hover {
+
+    border: none;
+    border-bottom: 5px solid var(--color2);
+    outline: none;
+}
+
+label {
+    padding : 10px ;
+    display: block;
+}
+
+select{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #eaeaea;
+}
+
+
+.button {
+    padding : 15px ;
+    text-align: center;
+    margin-top: 10vh ;
+    border-radius: 5px;
+    background-color: var(--color4);
+    border: none;
+    color: var(--color3);
+    font-size: large;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: inset 0 0 0 2em var(--color2);
+  border: none;
+}
+
+.petitDetail{
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.checkbox {
+    transform: scale(2);
+}
+
+.delDiv{
+    margin-top: 50px;
+    padding-bottom: 10px;
+    border: 1px solid var(--color5);
+}

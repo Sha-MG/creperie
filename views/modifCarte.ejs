@@ -1,0 +1,102 @@
+<%- include('partials/header') %>
+    <section id="containerGlobal">
+        <p><%=message%></p>
+        <% if(locals.profil.role === "admin"){ %>
+        <section id="modifContainer">
+            <h2>Modifier un plat</h2>
+            <form method="POST">
+                <div>
+                    <label for="platSelect">Le plat à modifier :</label>
+                    <select id="platSelect" name="platSelect">
+                        <option value="">Sélectionnez un plat</option>
+                        <% for(plat of allCarte){ %>
+                            <% if(plat.type === "Entrée"){ %>
+                                <option name="<%=plat.id%>" value="<%=plat.id%>"><%=plat.nom%></option>
+                            <%}%>
+                            
+                        <%}%>
+                        <option value="---">--------------</option>
+                        <% for(plat of allCarte){ %>
+                            <% if(plat.type === "Plat"){ %>
+                                <option name="<%=plat.id%>" value="<%=plat.id%>"><%=plat.nom%></option>
+                            <%}%>
+                        <%}%>
+                        <option value="---">--------------</option>
+                        <% for(plat of allCarte){ %>
+                            <% if(plat.type === "Dessert"){ %>
+                                <option name="<%=plat.id%>" value="<%=plat.id%>"><%=plat.nom%></option>
+                            <%}%>
+                        <%}%>
+                    </select>
+                </div>
+                <div>
+                    <label for="platType">Le type de plat :</label>
+                    <select id="platType" name="platType">
+                        <option name="Entrée" value="Entrée">Entrée</option>
+                        <option name="Plat" value="Plat">Plat</option>
+                        <option name="Dessert" value="Dessert">Dessert</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="platRename">Le nom :</label>
+                    <input type="text" id="platRename" name="platRename">
+                </div>
+                <div>
+                    <label for="platRecette">La recette :</label>
+                    <input type="text" id="platRecette" name="platRecette">
+                </div>
+                <div>
+                    <label for="platPrix">Le prix</label>
+                    <p class="petitDetail">Mettez bien un point pour les chiffres à virgule</p>
+                    <input type="text" id="platPrix" name="platPrix">
+                </div>
+                <div class="delDiv">
+                    <label for="platDelet"><i class="fas fa-exclamation-triangle"></i> Je veux supprimer ce plat de notre carte</label>
+                    <input type="checkBox" name="platDelete" value="delete" class="checkbox">
+                </div>
+
+                <input class="button" type="submit" value="Valider">
+            </form>
+        </section>
+        <section id="addContainer">
+            <h2>Ajouter un plat</h2>
+            <form method="POST">
+                <div>
+                    <label for="platNom">Nom du plat :</label>
+                    <input type="text" id="platNom" name="platNom" required>
+                </div>
+                <div>
+                    <label for="platType">Le type de plat :</label>
+                    <select id="platType" name="type" required>
+                        <option name="Entrée" value="Entrée">Entrée</option>
+                        <option name="Plat" value="Plat">Plat</option>
+                        <option name="Dessert" value="Dessert">Dessert</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="platRecette">La recette :</label>
+                    <input type="text" id="platRecette" name="platRecette" required>
+                </div>
+                <div>
+                    <label for="platPrix">Le prix</label>
+                    <p class="petitDetail">Mettez bien un point pour les chiffres à virgule</p>
+                    <input type="text" id="platPrix" name="platPrix" required>
+                </div>
+
+                <input class="button" type="submit" value="Ajouter">
+            </form>
+        </section>
+
+        <%}else{%>
+
+            <div class="messageNoAdmin">
+                <i class="fa-solid fa-circle-xmark fa-2xl"></i>
+                <p>Hép hép hép tu n'es pas censé voir ça !</p>
+            </div>
+
+        <%}%>
+    </section>
+<%- include('partials/footer')%>
+
+</body>
+</html>
