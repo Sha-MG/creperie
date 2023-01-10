@@ -13,7 +13,9 @@ const router = express.Router();
 // Routes basiques
 router.get('/', mainController.getIndex);
 router.get('/panier', mainController.getPanier) ;
-router.get('/contact', mainController.getContactPage)
+router.get('/contact', mainController.getContactPage);
+router.get('/404', mainController.noPage);
+router.get('/500', mainController.pageOups)
 
 // Routes carte & panier
 router.get('/carte', carteController.getAllPlats );
@@ -36,13 +38,15 @@ router.get('/deconnexion', profilController.deconnexion)
 router.get('/profil/carteModif', adminController.modificationCartePage)
 router.post('/profil/carteModif', adminController.handleModif)
 router.get('/profil/commandeProgress', adminController.commandeProgressionPage )
+router.get('/profil/commandeProgress/:id', adminController.commandeProgression)
 router.get('/profil/commandeHistory', adminController.commandeHistoryPage)
+router.post('/profil/commandeHistory', adminController.commandeHistorySearch)
 router.get('/profil/modifProfil', adminController.modifProfilPage)
 
 
 // 404 si la route appelée ne correspond a aucune de celles du dessus.
 router.use((req, res) => {
-    res.status(404).render('404', { css: "404" })
+    res.status(404).redirect('/404')
   })
 
 

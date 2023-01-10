@@ -34,27 +34,6 @@ VALUES  (1, 1),
         (6, 5);
 
 
-INSERT INTO "plats_has_accompagnements" ("plats_id", "accompagnements_id")
-VALUES  (1, 1),
-        (1, 2),
-        (2, 3),
-        (2, 1),
-        (2, 2),
-        (2, 4),
-        (3, 1),
-        (3, 3),
-        (4, 1),
-        (4, 2),
-        (4, 4),
-        (5, 1),
-        (3, 3),
-        (4, 1),
-        (4, 2),
-        (4, 4),
-        (5, 1),
-        (6, 4)
-        ;
-
 INSERT INTO "profils" ("nom", "prenom", "adresse", "points", "role", "mail", "password")
 VALUES  ('Michel', 'Bidule', '01 rue de la joie 74000 Paris', 0, 'customer', 'michel@gmail.com', 'michel'),
         ('Admin', 'Admin', '34 rue du bonheur 35000 Rennes', 10, 'admin', 'admin@gmail.com', 'admin')

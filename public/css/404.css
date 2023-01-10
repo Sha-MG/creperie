@@ -3,3 +3,13 @@ img {
     margin-top: 3vw;
     margin-left : 20vw ;
 }
+
+#divError{
+    width: 80vw;
+    height: 60vh;
+    padding: 30px;
+    background-color: white;
+    margin: auto;
+    margin-top: 10vh;
+    text-align: center;
+}

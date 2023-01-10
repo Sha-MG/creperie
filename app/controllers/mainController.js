@@ -56,6 +56,11 @@ const mainController = {
 
         res.render('contact', {css:'contact'})
 
+    },
+
+    pageOups(req , res){
+
+        res.render('500', {css:'404', error:"Oupsi"})
     }
 };
 

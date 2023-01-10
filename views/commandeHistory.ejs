@@ -1,12 +1,60 @@
 <%- include('partials/header') %>
-    <section id="containerGlobal">
+    <section id="containerGlobalHistory">
         <% if(locals.profil.role === "admin"){ %>
-        <p>Coucou t'es admin</p>
+        <h1 id="title">Historique de toutes les commandes :</h1>
 
+        <div id="containerBouttonRecherche">
+            <form method="POST">
+                <div>           
+                    <label for="nom" name="nom">Client :</label>
+                    <input type="text" name="nom">
+                </div>
+                <div>
+                    <label for="date" name="date">Date :</label>
+                    <input type="date" name="date">
+                </div>
+                <div>
+                    <label for="statut" name="statut">Statut :</label>
+                    <select name="statut">
+                        <option name="En cours" value="En cours">En cours</option>
+                        <option name="Terminé" value="Terminé">Terminé</option>
+                    </select>
+                </div>
+                <input type="submit" class="button searchButton" value="Recherche">
+                <a href="/profil/commandeHistory" class="button searchButton">Reset</a>
+            </form>
+        </div>
+        <div id="containerCommands">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date de la commande</th>
+                        <th>Client</th>
+                        <th>Statut</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3" class="contenuCommande">Contenu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(command of allCommandes){ %>
+                        <tr class="uneCommande">
+                            <td><%=command.createdAt%></td>
+                            <td><%=command.profil.nom%> <%=command.profil.prenom%></td>
+                            <td><%=command.statut%></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="contenuCommande"><%=command.contenu%></td>
+                        </tr>
+                    <%}%>
+
+                </tbody>
+            </table>
+        </div>
 
         <%}else{%>
 
-            <div class="messageNoAdmin">
+            <div class="message error">
                 <i class="fa-solid fa-circle-xmark fa-2xl"></i>
                 <p>Hép hép hép tu n'es pas censé voir ça !</p>
             </div>

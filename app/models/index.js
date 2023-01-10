@@ -8,14 +8,14 @@ const Commande = require('./Commandes')
 Plat.belongsToMany(Vignette, {
     as: 'vignettes',
     through: 'plats_has_vignettes',
-    foreignKey: 'vignettes_id',
-    otherKey: 'plats_id'
+    foreignKey: 'plats_id',
+    otherKey: 'vignettes_id'
 });
 Vignette.belongsToMany(Plat, {
     as: 'plats',
     through: 'plats_has_vignettes',
-    foreignKey: 'plats_id',
-    otherKey: 'vignettes_id'
+    foreignKey: 'vignettes_id',
+    otherKey: 'plats_id'
 });
 
 //  Relations Plats <-> Accompagnement

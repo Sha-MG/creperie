@@ -1,6 +1,9 @@
 <%- include('partials/header') %>
     <section id="containerGlobal">
-        <p><%=message%></p>
+        <% if(message != ''){ %>
+            <p class="message <%=messageType%>"><%=message%></p>
+        <%}%>
+
         <% if(locals.profil.role === "admin"){ %>
         <section id="modifContainer">
             <h2>Modifier un plat</h2>
@@ -47,11 +50,11 @@
                 </div>
                 <div>
                     <label for="platPrix">Le prix</label>
-                    <p class="petitDetail">Mettez bien un point pour les chiffres à virgule</p>
+                    <p class="petitDetail">Mettez bien une virgule au besoin</p>
                     <input type="text" id="platPrix" name="platPrix">
                 </div>
                 <div class="delDiv">
-                    <label for="platDelet"><i class="fas fa-exclamation-triangle"></i> Je veux supprimer ce plat de notre carte</label>
+                    <label for="platDelet"><i class="fas fa-exclamation-triangle fa-xl"></i> Je veux supprimer ce plat de notre carte</label>
                     <input type="checkBox" name="platDelete" value="delete" class="checkbox">
                 </div>
 
@@ -79,17 +82,46 @@
                 </div>
                 <div>
                     <label for="platPrix">Le prix</label>
-                    <p class="petitDetail">Mettez bien un point pour les chiffres à virgule</p>
+                    <p class="petitDetail">Mettez bien une virgule au besoin</p>
                     <input type="text" id="platPrix" name="platPrix" required>
                 </div>
-
+                <fieldset>
+                    <legend>Choisissez les icônes associées : </legend>
+                    <div id="divIconesChoix">
+                        <div>
+                        <input class="checkboxIcones" type="checkbox" name="Végétarien" value="fa-leaf" />
+                        <label for="fa-leaf" name="fa-leaf"><i class="fa-solid fa-leaf"></i> Végétarien</label>
+                        </div>
+                        <div>
+                        <input class="checkboxIcones" type="checkbox" name="Viande" value="fa-drumstick-bite" />
+                        <label for="Viande" name="fa-drumstick-bite"><i class="fa-solid fa-drumstick-bite"></i> Viande</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" name="Poisson" value="fa-fish" class="checkboxIcones"/>
+                        <label for="Poisson" name="fa-fish"><i class="fa-solid fa-drumstick-bite"></i> Poisson</label>
+                        </div>
+                        <div>
+                        <input class="checkboxIcones" type="checkbox" name="Arachide" value="fa-cubes-stacked" />
+                        <label for="Arachide" name="fa-cubes-stacked"><i class="fa-solid fa-cubes-stacked"></i> Arachide</label>
+                        </div>
+                        <div>
+                        <input class="checkboxIcones" type="checkbox" name="Gluten" value="fa-wheat-awn" />
+                        <label for="Gluten" name="fa-wheat-awn"><i class="fa-solid fa-wheat-awn"></i> Gluten</label>
+                        </div>
+                        <div>
+                            <input class="checkboxIcones" type="checkbox" name="Lait" value="fa-bottle-water" />
+                            <label for="Lait" name="fa-bottle-water"><i class="fa-solid fa-bottle-water"></i> Lait</label>
+                        </div>
+                    </div>
+                  </fieldset>
                 <input class="button" type="submit" value="Ajouter">
             </form>
         </section>
 
+<!-- Si la session actuelle n'est pas en admin -->
         <%}else{%>
 
-            <div class="messageNoAdmin">
+            <div class="message error">
                 <i class="fa-solid fa-circle-xmark fa-2xl"></i>
                 <p>Hép hép hép tu n'es pas censé voir ça !</p>
             </div>

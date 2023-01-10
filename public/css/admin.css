@@ -4,36 +4,44 @@
     margin: auto;
     margin-top: 5vh;
     min-height: 70vh;
-    display: flex;
-    gap: 30px;
-    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 14px;
 }
 
-h1{
-
-}
+/* Page de modif de la carte */
 h2{
     text-align: center;
 }
 #modifContainer{
-    width: 45%;
+    grid-area: 3 / 2 / 16 / 8;
     border-right: 4px dotted var(--color4);
 }
 
 #addContainer{
-    width: 45%;
+    grid-area: 3 / 8 / 16 / 15;
 }
 
-.messageNoAdmin{
-
+.message{
+    grid-area: 2 / 2 / 3 / 15;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    background-color: var(--color4);
     padding: 20px;
     font-size: 1.3rem;
     
+}
+
+.validate{
+    background-color: var(--color5);
+}
+
+.error{
+
+    background-color: var(--color4);
 }
 
 .messageNoAdmin>p {
@@ -112,4 +120,106 @@ select{
     margin-top: 50px;
     padding-bottom: 10px;
     border: 1px solid var(--color5);
+}
+
+fieldset{
+    margin-top: 10vh;
+}
+#divIconesChoix{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#divIconesChoix > div {
+    width: 40%;
+    height: 40%;
+}
+
+.checkboxIcones{
+    transform: scale(1.5);
+}
+
+input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 3px var(--color4);
+    color: var(--color2);
+  }
+
+  /* Page de l'historique des commandes */
+
+  #containerGlobalHistory{
+    width: 80vw;
+    background-color: white;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 10vh;
+  }
+
+#containerCommands{
+    background-color: #eaeaea;
+    overflow-y: scroll;
+    max-height: 90vh;
+    margin: auto;
+
+}
+
+#containerCommands > table{
+    border: 3px solid var(--color6);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#containerCommands thead {
+    background-color: var(--color5);
+
+}
+
+th, td {
+    padding: 10px;
+}
+
+#title{
+text-align: center;
+}
+
+.contenuCommande{
+    font-weight: 200;
+    font-style: italic;
+    padding-top: 0;
+    border-bottom: 1px solid var(--color6);
+}
+
+#containerBouttonRecherche{
+    font-size: 0.9rem;
+    align-items: baseline;
+}
+
+#containerBouttonRecherche h2 {
+    font-size: 1rem;
+}
+
+#containerBouttonRecherche form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+} 
+
+#containerBouttonRecherche select{
+    width: 15vh;
+} 
+
+.searchButton {
+    margin:30px;
+    border: none;
+    text-decoration: none;
+}
+
+.searchButton:hover {
+    border: none;
+    text-decoration: none;
+    color: white;
 }

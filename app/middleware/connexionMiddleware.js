@@ -11,7 +11,7 @@ const profilMiddleware = (req, res, next) => {
         // on n'a pas d'user connecté
         res.locals.profil = false;
     }
-    
+
     next();
 }
 

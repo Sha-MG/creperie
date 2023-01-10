@@ -119,7 +119,7 @@ const carteController = {
         // Si erreur => page 500
         
             console.log(error)
-            res.status(500).render('500',{error, css: 'error'})
+            res.status(500).render('500',{error, css: '404'})
         }
 
     },

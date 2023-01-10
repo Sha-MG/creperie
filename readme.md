@@ -14,7 +14,6 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
 - ✔️ CRUD de son propre profil
 
 ----
-- Points de fidélité
 - ✔️ Commande
     - ✔️ ajout de plats
     - ✔️ suppression de plat
@@ -26,13 +25,17 @@ Ceci est un site ayant pour but de mettre en pratique les connaissances acquises
   
 ----
 
-- Profil admin
-- CRUD des plats
-- Vue sur les commandes
+- ✔️ Profil admin
+- ✔️ CRUD des plats
+- ✔️ Vue sur toutes les commandes & Recherche
+- ✔️ Modif Statut commande
+- Modif profils users
 
 ----
 
-#### Idées si y a le temps :
+#### Idées pour aller plus loin:
 
+- Réservation poussée
 - Commentaires clients/Avis
 - Couleurs des horaires qui changent en fonction de l'heure actuelle 
+- points de fidélité

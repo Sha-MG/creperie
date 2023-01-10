@@ -1,12 +1,40 @@
 <%- include('partials/header') %>
-    <section id="containerGlobal">
+    <section id="containerGlobalHistory">
         <% if(locals.profil.role === "admin"){ %>
-        <p>Coucou t'es admin</p>
+        <h1 id="title">Commandes en cours :</h1>
+        <div id="containerCommands">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date de la commande</th>
+                        <th>Client</th>
+                        <th>Statut</th>
+                        <th>Terminer</th>
+                    </tr>
+                    <tr>
+                        <th colspan="4" class="contenuCommande">Contenu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(command of allCommandes){ %>
+                        <tr class="uneCommande">
+                            <td><%=command.createdAt%></td>
+                            <td><%=command.profil.nom%> <%=command.profil.prenom%></td>
+                            <td><%=command.statut%></td>
+                            <td><a href="/profil/commandeProgress/<%=command.id%>"><i class="fa-sharp fa-solid fa-check fa-2x"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="contenuCommande"><%=command.contenu%></td>
+                        </tr>
+                    <%}%>
 
+                </tbody>
+            </table>
+        </div>
 
         <%}else{%>
 
-            <div class="messageNoAdmin">
+            <div class="message error">
                 <i class="fa-solid fa-circle-xmark fa-2xl"></i>
                 <p>Hép hép hép tu n'es pas censé voir ça !</p>
             </div>
